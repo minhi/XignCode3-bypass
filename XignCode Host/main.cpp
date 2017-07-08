@@ -21,7 +21,7 @@ INT APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 	freopen_s(&pFile, "CON", "w", stdout);
 	freopen_s(&pFile, "CON", "w", stderr);
 
-	if (!XignCode::Initialize(L"C:\\MapleStory (Europe)"))
+	if (!XignCode::Initialize(L"C:\\Program Files (x86)\\NCSOFT\\BnS\\bin"))
 	{
 		return 0;
 	}

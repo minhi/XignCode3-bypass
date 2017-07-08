@@ -5,8 +5,9 @@ namespace XignCode
 	bool Initialize(std::wstring const& maplestory_directory)
 	{
 		/* Load MapleStory stub */
-		HMODULE maplestory_module = LoadLibraryEx((maplestory_directory + std::wstring(L"\\MapleStory.exe")).c_str(), NULL, DONT_RESOLVE_DLL_REFERENCES);
-		
+		HMODULE maplestory_module = LoadLibraryEx((maplestory_directory + std::wstring(L"\\Client.exe")).c_str(), NULL, DONT_RESOLVE_DLL_REFERENCES);
+		DWORD error = GetLastError();
+
 		if (!maplestory_module)
 		{
 			return false;
@@ -25,7 +26,7 @@ namespace XignCode
 		};
 		
 		/* Load XignCode */
-		std::wstring xigncode_directory = maplestory_directory + L"\\XignCode3";
+		std::wstring xigncode_directory = maplestory_directory + L"\\XignCode";
 		HMODULE xigncode_module = LoadLibrary((xigncode_directory + std::wstring(L"\\x3.xem")).c_str());
 	
 		if (!xigncode_module)
